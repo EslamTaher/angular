@@ -7,6 +7,7 @@ import { NotfoundComponent } from './notfound/notfound.component';
 import { ListComponent } from './student/list/list.component';
 import { AddComponent } from './student/add/add.component';
 import { DetailsComponent } from './student/details/details.component';
+import { EditComponent } from './student/edit/edit.component';
 
 
 const routes: Routes = [
@@ -18,7 +19,8 @@ const routes: Routes = [
     {path:"details/:id",component:DetailsComponent}
   ]},
   {path:"student/add",component:AddComponent},
-
+  {path:"student/edit/:id",component:EditComponent},
+  
   {path:"**",component:NotfoundComponent},
 ];
 

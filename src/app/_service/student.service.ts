@@ -12,11 +12,19 @@ export class StudentService {
   getstudents(){
     return this.http.get<Student[]>(this.baseurl+"list");
   }
+  
   getstudentdetails(id:number){
     return this.http.get<Student>(this.baseurl+"details");
   }
+
   AddStudent(std:Student){
     return this.http.post<Student>(this.baseurl+"add",std);
+  }
+  editStudent(id,std){
+    return this.http.post<Student>(this.baseurl+"edit/"+id,std)
+  }
+  deleteStudent(id:number){
+    return this.http.get(this.baseurl+"delete/"+id)
   }
   constructor( private http:HttpClient) { }
 }

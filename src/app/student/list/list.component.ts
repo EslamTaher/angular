@@ -15,17 +15,21 @@ export class ListComponent implements OnInit {
   constructor(private studentservice :StudentService,
     private router:Router) { }
 
-    // deleteStudent(id,i){
+    deleteStudent(id,i){
 
-    //   console.log(id)
-    //   this.studentservice.deleteStudent(id).subscribe(a=>{
-    //     this.students.splice(i,1)
-    //     console.log(a)
-    //    }
-    //   )
-    // }
+      console.log(id)
+      this.studentservice.deleteStudent(id).subscribe(a=>{
+        this.students.splice(i,1)
+        console.log(a)
+       }
+      )
+    }
   ngOnInit(): void {
     this.studentservice.getstudents().subscribe(d=>{console.log(d)})
+    this.studentservice.getstudents().subscribe(
+      data=>this.students=data
+    )
+    
   }
 
 }
